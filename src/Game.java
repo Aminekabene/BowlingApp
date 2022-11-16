@@ -26,6 +26,7 @@ public class Game {
         }
 
         int currentframe = board.size()-1;
+        // This is the second roll of the current Frame
         if(board.get(currentframe).size() == 1 && board.get(currentframe).get(1) != 10){
 
             if (pins + board.get(currentframe).get(1) > 10){
@@ -33,14 +34,15 @@ public class Game {
             }
 
             board.get(currentframe).put(2,pins);
-
-            if(board.size() == 10 && computeFrameScore(board.get(currentframe)) < 10 || board.size()==11){
+            // game is over if no spare or strike scored
+            if((board.size() == 10 && computeFrameScore(board.get(currentframe))) < 10 || board.size()==11){
                 isGameOver = true;
                 System.out.println("Game Over !");
             }
             System.out.println(board.toString());
             return;
         }
+        // if you got here it means you scored a strike on the 10th frame there fore you allowed to extra shots
         else if(board.size() == 11 && board.get(currentframe).size() == 1){
             board.get(currentframe).put(2,pins);
             isGameOver = true;
@@ -73,7 +75,7 @@ public class Game {
                     totalScore += board.get(i).get(1);
                 }
             }
-
+            // There are no bonus on the last round.
             if(i+1 != 11){
                 totalScore += computeFrameScore(board.get(i));
             }
