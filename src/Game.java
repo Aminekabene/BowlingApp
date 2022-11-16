@@ -61,7 +61,6 @@ public class Game {
         }
 
         for (int i =0; i < board.size(); i++){
-
             if (i > 0){
                 int previousFrame = i-1;
 
