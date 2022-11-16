@@ -34,7 +34,7 @@ public class Game {
 
             board.get(currentframe).put(2,pins);
 
-            if( (board.size() == 10 && (board.get(currentframe).get(1) + board.get(currentframe).get(2)) < 10) || board.size()==11){
+            if(board.size() == 10 && computeFrameScore(board.get(currentframe)) < 10 || board.size()==11){
                 isGameOver = true;
                 System.out.println("Game Over !");
             }
