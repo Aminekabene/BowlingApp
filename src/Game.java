@@ -33,10 +33,24 @@ public class Game {
             }
 
             board.get(currentframe).put(2,pins);
+
+            if( (board.size() == 10 && (board.get(currentframe).get(1) + board.get(currentframe).get(2)) < 10) || board.size()==11){
+                isGameOver = true;
+                System.out.println("Game Over !");
+            }
+
             return;
         }
         else{
             board.add(new HashMap<Integer,Integer>(){ {put(1,pins);} });
+            
+            if (board.size()==11){
+                int previousFrame = board.size()-2;
+                if(board.get(previousFrame).size()==2){
+                    isGameOver = true;
+                    System.out.println("Game Over !");
+                }
+            }
         }
 
 

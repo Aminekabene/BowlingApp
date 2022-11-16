@@ -13,8 +13,9 @@ public class Main {
         game.roll(10);
         game.roll(10);
         game.roll(10);
+        game.roll(8);
         game.roll(2);
-        game.roll(3);
+        game.roll(2);
 
         System.out.println(game.board.toString());
     }
