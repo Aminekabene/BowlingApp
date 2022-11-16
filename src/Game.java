@@ -52,7 +52,7 @@ public class Game {
         System.out.println(board.toString());
     }
 
-    //This method compute the score for all rolls performed
+    //This method compute the score for all rolls performed until now
     public void score(){
         int totalScore = 0;
 
