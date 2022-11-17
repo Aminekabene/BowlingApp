@@ -42,7 +42,7 @@ public class Game {
             System.out.println(board.toString());
             return;
         }
-        // if you got here it means you scored a strike on the 10th frame there fore you allowed to extra shots
+        // if you got here it means you scored a strike on the 10th frame therefore you allowed to extra shots
         else if(board.size() == 11 && board.get(currentframe).size() == 1){
             board.get(currentframe).put(2,pins);
             isGameOver = true;
