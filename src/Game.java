@@ -35,7 +35,7 @@ public class Game {
 
             board.get(currentframe).put(2,pins);
             // game is over if no spare or strike scored
-            if((board.size() == 10 && computeFrameScore(board.get(currentframe))) < 10 || board.size()==11){
+            if(board.size() == 10 && computeFrameScore(board.get(currentframe)) < 10 || board.size()==11){
                 isGameOver = true;
                 System.out.println("Game Over !");
             }
